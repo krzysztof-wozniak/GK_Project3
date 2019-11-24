@@ -53,25 +53,33 @@ namespace GK_Projekt3
 
         private void UpdatePictures()
         {
-            Bitmap bitmap = new Bitmap(sourcePictureBox.Image);
-            if(modelComboBox.SelectedIndex == 0)//YCbCr
+            Bitmap bitmap1 = new Bitmap(sourcePictureBox.Image);
+            Bitmap bitmap2 = new Bitmap(sourcePictureBox.Image);
+            Bitmap bitmap3 = new Bitmap(sourcePictureBox.Image);
+            Image oldimage1 = pictureBox1.Image;
+            Image oldimage2 = pictureBox2.Image;
+            Image oldimage3 = pictureBox3.Image;
+            if (modelComboBox.SelectedIndex == 0)//YCbCr
             {
                 for(int i = 0; i < bitmap.Width; i++)
                 {
                     for(int j = 0; j < bitmap.Height; j++)
                     {
-                        Color Y = bitmap.GetPixel(i, j);
+                        Color Y = bitmap1.GetPixel(i, j);
                         double y = (double)Y.R * 0.299 + (double)Y.G * 0.587 + (double)Y.B * 0.114;
                         int c = (int)Math.Round(y);
                         if (c > 255)
                             c = 255;
                         if (c < 0)
                             c = 0;
-                        bitmap.SetPixel(i, j, Color.FromArgb(c, c, c));
+                        bitmap1.SetPixel(i, j, Color.FromArgb(c, c, c));
                     }
                 }
             }
-            pictureBox1.Image = bitmap;
+            pictureBox1.Image = bitmap1;
+            oldimage1.Dispose();
+            oldimage2.Dispose();
+            oldimage3.Dispose();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
