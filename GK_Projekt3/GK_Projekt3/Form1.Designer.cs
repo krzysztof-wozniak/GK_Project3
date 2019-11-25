@@ -31,12 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.topTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.sourcePictureBox = new System.Windows.Forms.PictureBox();
             this.optionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -68,6 +65,9 @@
             this.redLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.descriptionLabel3 = new System.Windows.Forms.Label();
+            this.descriptionLabel2 = new System.Windows.Forms.Label();
+            this.descriptionLabel1 = new System.Windows.Forms.Label();
             this.mainTableLayoutPanel.SuspendLayout();
             this.bottomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,49 +101,39 @@
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
             this.mainTableLayoutPanel.RowCount = 2;
-            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(984, 761);
             this.mainTableLayoutPanel.TabIndex = 0;
             // 
             // bottomTableLayoutPanel
             // 
             this.bottomTableLayoutPanel.ColumnCount = 3;
-            this.bottomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.bottomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.bottomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.bottomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.bottomTableLayoutPanel.Controls.Add(this.textBox2, 0, 0);
             this.bottomTableLayoutPanel.Controls.Add(this.pictureBox3, 2, 1);
             this.bottomTableLayoutPanel.Controls.Add(this.pictureBox2, 1, 1);
             this.bottomTableLayoutPanel.Controls.Add(this.pictureBox1, 0, 1);
-            this.bottomTableLayoutPanel.Controls.Add(this.textBox1, 1, 0);
-            this.bottomTableLayoutPanel.Controls.Add(this.textBox3, 2, 0);
+            this.bottomTableLayoutPanel.Controls.Add(this.descriptionLabel3, 2, 0);
+            this.bottomTableLayoutPanel.Controls.Add(this.descriptionLabel2, 1, 0);
+            this.bottomTableLayoutPanel.Controls.Add(this.descriptionLabel1, 0, 0);
             this.bottomTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottomTableLayoutPanel.Location = new System.Drawing.Point(3, 510);
+            this.bottomTableLayoutPanel.Location = new System.Drawing.Point(3, 459);
             this.bottomTableLayoutPanel.Name = "bottomTableLayoutPanel";
             this.bottomTableLayoutPanel.RowCount = 2;
-            this.bottomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.bottomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.bottomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.bottomTableLayoutPanel.Size = new System.Drawing.Size(978, 248);
+            this.bottomTableLayoutPanel.Size = new System.Drawing.Size(978, 299);
             this.bottomTableLayoutPanel.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(3, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(319, 13);
-            this.textBox2.TabIndex = 4;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(654, 29);
+            this.pictureBox3.Location = new System.Drawing.Point(654, 23);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(321, 216);
+            this.pictureBox3.Size = new System.Drawing.Size(321, 273);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -152,9 +142,9 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(328, 29);
+            this.pictureBox2.Location = new System.Drawing.Point(328, 23);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(320, 216);
+            this.pictureBox2.Size = new System.Drawing.Size(320, 273);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -163,36 +153,12 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(319, 216);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 273);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(328, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 13);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(654, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(321, 20);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "Elo";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // topTableLayoutPanel
             // 
@@ -206,7 +172,7 @@
             this.topTableLayoutPanel.Name = "topTableLayoutPanel";
             this.topTableLayoutPanel.RowCount = 1;
             this.topTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.topTableLayoutPanel.Size = new System.Drawing.Size(978, 501);
+            this.topTableLayoutPanel.Size = new System.Drawing.Size(978, 450);
             this.topTableLayoutPanel.TabIndex = 1;
             // 
             // sourcePictureBox
@@ -215,7 +181,7 @@
             this.sourcePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("sourcePictureBox.Image")));
             this.sourcePictureBox.Location = new System.Drawing.Point(3, 3);
             this.sourcePictureBox.Name = "sourcePictureBox";
-            this.sourcePictureBox.Size = new System.Drawing.Size(697, 495);
+            this.sourcePictureBox.Size = new System.Drawing.Size(697, 444);
             this.sourcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.sourcePictureBox.TabIndex = 0;
             this.sourcePictureBox.TabStop = false;
@@ -238,7 +204,7 @@
             this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.optionsTableLayoutPanel.Size = new System.Drawing.Size(269, 495);
+            this.optionsTableLayoutPanel.Size = new System.Drawing.Size(269, 444);
             this.optionsTableLayoutPanel.TabIndex = 1;
             // 
             // modelComboBox
@@ -253,7 +219,7 @@
             this.modelComboBox.Name = "modelComboBox";
             this.modelComboBox.Size = new System.Drawing.Size(76, 21);
             this.modelComboBox.TabIndex = 1;
-            this.modelComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.modelComboBox.SelectedIndexChanged += new System.EventHandler(this.modelComboBox_SelectedIndexChanged);
             // 
             // labGroupBox
             // 
@@ -572,6 +538,42 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Model";
             // 
+            // descriptionLabel3
+            // 
+            this.descriptionLabel3.AutoSize = true;
+            this.descriptionLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel3.Location = new System.Drawing.Point(654, 0);
+            this.descriptionLabel3.Name = "descriptionLabel3";
+            this.descriptionLabel3.Size = new System.Drawing.Size(321, 20);
+            this.descriptionLabel3.TabIndex = 3;
+            this.descriptionLabel3.Text = "Cr";
+            this.descriptionLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // descriptionLabel2
+            // 
+            this.descriptionLabel2.AutoSize = true;
+            this.descriptionLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel2.Location = new System.Drawing.Point(328, 0);
+            this.descriptionLabel2.Name = "descriptionLabel2";
+            this.descriptionLabel2.Size = new System.Drawing.Size(320, 20);
+            this.descriptionLabel2.TabIndex = 4;
+            this.descriptionLabel2.Text = "Cb";
+            this.descriptionLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // descriptionLabel1
+            // 
+            this.descriptionLabel1.AutoSize = true;
+            this.descriptionLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel1.Location = new System.Drawing.Point(3, 0);
+            this.descriptionLabel1.Name = "descriptionLabel1";
+            this.descriptionLabel1.Size = new System.Drawing.Size(319, 20);
+            this.descriptionLabel1.TabIndex = 5;
+            this.descriptionLabel1.Text = "Y";
+            this.descriptionLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,9 +623,6 @@
         private System.Windows.Forms.TableLayoutPanel topTableLayoutPanel;
         private System.Windows.Forms.PictureBox sourcePictureBox;
         private System.Windows.Forms.TableLayoutPanel optionsTableLayoutPanel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox modelComboBox;
         private System.Windows.Forms.GroupBox labGroupBox;
         private System.Windows.Forms.TableLayoutPanel labTableLayoutPanel;
@@ -652,6 +651,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown7;
         private System.Windows.Forms.NumericUpDown numericUpDown8;
         private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.Label descriptionLabel3;
+        private System.Windows.Forms.Label descriptionLabel2;
+        private System.Windows.Forms.Label descriptionLabel1;
     }
 }
 
