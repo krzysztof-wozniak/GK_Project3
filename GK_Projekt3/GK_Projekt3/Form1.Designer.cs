@@ -34,6 +34,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.descriptionLabel3 = new System.Windows.Forms.Label();
+            this.descriptionLabel2 = new System.Windows.Forms.Label();
+            this.descriptionLabel1 = new System.Windows.Forms.Label();
             this.topTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.sourcePictureBox = new System.Windows.Forms.PictureBox();
             this.optionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -53,21 +56,19 @@
             this.xLabel = new System.Windows.Forms.Label();
             this.yLabel = new System.Windows.Forms.Label();
             this.chromacityLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.redYNumeric = new System.Windows.Forms.NumericUpDown();
+            this.greenXNumeric = new System.Windows.Forms.NumericUpDown();
+            this.blueXNumeric = new System.Windows.Forms.NumericUpDown();
+            this.whiteXNumeric = new System.Windows.Forms.NumericUpDown();
+            this.greenYNumeric = new System.Windows.Forms.NumericUpDown();
+            this.blueYNumeric = new System.Windows.Forms.NumericUpDown();
+            this.whiteYNumeric = new System.Windows.Forms.NumericUpDown();
+            this.gammeNumeric = new System.Windows.Forms.NumericUpDown();
+            this.redXNumeric = new System.Windows.Forms.NumericUpDown();
             this.redLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.descriptionLabel3 = new System.Windows.Forms.Label();
-            this.descriptionLabel2 = new System.Windows.Forms.Label();
-            this.descriptionLabel1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.mainTableLayoutPanel.SuspendLayout();
             this.bottomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -80,15 +81,15 @@
             this.labTableLayoutPanel.SuspendLayout();
             this.labTopTableLayoutPanel.SuspendLayout();
             this.labBotTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redYNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenXNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueXNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteXNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenYNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueYNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteYNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gammeNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redXNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTableLayoutPanel
@@ -160,6 +161,42 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // descriptionLabel3
+            // 
+            this.descriptionLabel3.AutoSize = true;
+            this.descriptionLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel3.Location = new System.Drawing.Point(654, 0);
+            this.descriptionLabel3.Name = "descriptionLabel3";
+            this.descriptionLabel3.Size = new System.Drawing.Size(321, 20);
+            this.descriptionLabel3.TabIndex = 3;
+            this.descriptionLabel3.Text = "Cr";
+            this.descriptionLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // descriptionLabel2
+            // 
+            this.descriptionLabel2.AutoSize = true;
+            this.descriptionLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel2.Location = new System.Drawing.Point(328, 0);
+            this.descriptionLabel2.Name = "descriptionLabel2";
+            this.descriptionLabel2.Size = new System.Drawing.Size(320, 20);
+            this.descriptionLabel2.TabIndex = 4;
+            this.descriptionLabel2.Text = "Cb";
+            this.descriptionLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // descriptionLabel1
+            // 
+            this.descriptionLabel1.AutoSize = true;
+            this.descriptionLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel1.Location = new System.Drawing.Point(3, 0);
+            this.descriptionLabel1.Name = "descriptionLabel1";
+            this.descriptionLabel1.Size = new System.Drawing.Size(319, 20);
+            this.descriptionLabel1.TabIndex = 5;
+            this.descriptionLabel1.Text = "Y";
+            this.descriptionLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // topTableLayoutPanel
             // 
             this.topTableLayoutPanel.ColumnCount = 2;
@@ -227,7 +264,7 @@
             this.labGroupBox.Controls.Add(this.labTableLayoutPanel);
             this.labGroupBox.Location = new System.Drawing.Point(3, 63);
             this.labGroupBox.Name = "labGroupBox";
-            this.labGroupBox.Size = new System.Drawing.Size(263, 272);
+            this.labGroupBox.Size = new System.Drawing.Size(263, 318);
             this.labGroupBox.TabIndex = 2;
             this.labGroupBox.TabStop = false;
             this.labGroupBox.Text = "Lab Settings";
@@ -244,8 +281,9 @@
             this.labTableLayoutPanel.RowCount = 2;
             this.labTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.labTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.labTableLayoutPanel.Size = new System.Drawing.Size(257, 253);
+            this.labTableLayoutPanel.Size = new System.Drawing.Size(257, 299);
             this.labTableLayoutPanel.TabIndex = 0;
+            this.labTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.labTableLayoutPanel_Paint);
             // 
             // labTopTableLayoutPanel
             // 
@@ -321,16 +359,17 @@
             this.labBotTableLayoutPanel.Controls.Add(this.xLabel, 1, 0);
             this.labBotTableLayoutPanel.Controls.Add(this.yLabel, 2, 0);
             this.labBotTableLayoutPanel.Controls.Add(this.chromacityLabel, 0, 0);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown1, 2, 1);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown3, 1, 2);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown4, 1, 3);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown5, 1, 4);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown6, 2, 2);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown7, 2, 3);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown8, 2, 4);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown9, 1, 5);
-            this.labBotTableLayoutPanel.Controls.Add(this.numericUpDown2, 1, 1);
+            this.labBotTableLayoutPanel.Controls.Add(this.redYNumeric, 2, 1);
+            this.labBotTableLayoutPanel.Controls.Add(this.greenXNumeric, 1, 2);
+            this.labBotTableLayoutPanel.Controls.Add(this.blueXNumeric, 1, 3);
+            this.labBotTableLayoutPanel.Controls.Add(this.whiteXNumeric, 1, 4);
+            this.labBotTableLayoutPanel.Controls.Add(this.greenYNumeric, 2, 2);
+            this.labBotTableLayoutPanel.Controls.Add(this.blueYNumeric, 2, 3);
+            this.labBotTableLayoutPanel.Controls.Add(this.whiteYNumeric, 2, 4);
+            this.labBotTableLayoutPanel.Controls.Add(this.gammeNumeric, 1, 5);
+            this.labBotTableLayoutPanel.Controls.Add(this.redXNumeric, 1, 1);
             this.labBotTableLayoutPanel.Controls.Add(this.redLabel, 0, 1);
+            this.labBotTableLayoutPanel.Controls.Add(this.button1, 2, 5);
             this.labBotTableLayoutPanel.Location = new System.Drawing.Point(3, 73);
             this.labBotTableLayoutPanel.Name = "labBotTableLayoutPanel";
             this.labBotTableLayoutPanel.RowCount = 6;
@@ -340,7 +379,7 @@
             this.labBotTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.labBotTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.labBotTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.labBotTableLayoutPanel.Size = new System.Drawing.Size(251, 176);
+            this.labBotTableLayoutPanel.Size = new System.Drawing.Size(251, 177);
             this.labBotTableLayoutPanel.TabIndex = 1;
             // 
             // gammaLabel
@@ -426,86 +465,141 @@
             this.chromacityLabel.TabIndex = 1;
             this.chromacityLabel.Text = "Chromacity";
             // 
-            // numericUpDown1
+            // redYNumeric
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(169, 33);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown3.Location = new System.Drawing.Point(86, 63);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(77, 20);
-            this.numericUpDown3.TabIndex = 11;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown4.Location = new System.Drawing.Point(86, 93);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(77, 20);
-            this.numericUpDown4.TabIndex = 12;
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown5.Location = new System.Drawing.Point(86, 123);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(77, 20);
-            this.numericUpDown5.TabIndex = 13;
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown6.Location = new System.Drawing.Point(169, 63);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDown6.TabIndex = 14;
-            // 
-            // numericUpDown7
-            // 
-            this.numericUpDown7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown7.Location = new System.Drawing.Point(169, 93);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDown7.TabIndex = 15;
-            // 
-            // numericUpDown8
-            // 
-            this.numericUpDown8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown8.Location = new System.Drawing.Point(169, 123);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDown8.TabIndex = 16;
-            // 
-            // numericUpDown9
-            // 
-            this.numericUpDown9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown9.Location = new System.Drawing.Point(86, 153);
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(77, 20);
-            this.numericUpDown9.TabIndex = 17;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown2.DecimalPlaces = 4;
-            this.numericUpDown2.Increment = new decimal(new int[] {
+            this.redYNumeric.DecimalPlaces = 4;
+            this.redYNumeric.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.numericUpDown2.Location = new System.Drawing.Point(86, 33);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(77, 20);
-            this.numericUpDown2.TabIndex = 10;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.redYNumeric.Location = new System.Drawing.Point(169, 33);
+            this.redYNumeric.Name = "redYNumeric";
+            this.redYNumeric.Size = new System.Drawing.Size(79, 20);
+            this.redYNumeric.TabIndex = 9;
+            this.redYNumeric.ValueChanged += new System.EventHandler(this.redYNumeric_ValueChanged);
+            // 
+            // greenXNumeric
+            // 
+            this.greenXNumeric.DecimalPlaces = 4;
+            this.greenXNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.greenXNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.greenXNumeric.Location = new System.Drawing.Point(86, 63);
+            this.greenXNumeric.Name = "greenXNumeric";
+            this.greenXNumeric.Size = new System.Drawing.Size(77, 20);
+            this.greenXNumeric.TabIndex = 11;
+            this.greenXNumeric.ValueChanged += new System.EventHandler(this.greenXNumeric_ValueChanged);
+            // 
+            // blueXNumeric
+            // 
+            this.blueXNumeric.DecimalPlaces = 4;
+            this.blueXNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blueXNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.blueXNumeric.Location = new System.Drawing.Point(86, 93);
+            this.blueXNumeric.Name = "blueXNumeric";
+            this.blueXNumeric.Size = new System.Drawing.Size(77, 20);
+            this.blueXNumeric.TabIndex = 12;
+            this.blueXNumeric.ValueChanged += new System.EventHandler(this.blueXNumeric_ValueChanged);
+            // 
+            // whiteXNumeric
+            // 
+            this.whiteXNumeric.DecimalPlaces = 4;
+            this.whiteXNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.whiteXNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.whiteXNumeric.Location = new System.Drawing.Point(86, 123);
+            this.whiteXNumeric.Name = "whiteXNumeric";
+            this.whiteXNumeric.Size = new System.Drawing.Size(77, 20);
+            this.whiteXNumeric.TabIndex = 13;
+            this.whiteXNumeric.ValueChanged += new System.EventHandler(this.whiteXNumeric_ValueChanged);
+            // 
+            // greenYNumeric
+            // 
+            this.greenYNumeric.DecimalPlaces = 4;
+            this.greenYNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.greenYNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.greenYNumeric.Location = new System.Drawing.Point(169, 63);
+            this.greenYNumeric.Name = "greenYNumeric";
+            this.greenYNumeric.Size = new System.Drawing.Size(79, 20);
+            this.greenYNumeric.TabIndex = 14;
+            this.greenYNumeric.ValueChanged += new System.EventHandler(this.greenYNumeric_ValueChanged);
+            // 
+            // blueYNumeric
+            // 
+            this.blueYNumeric.DecimalPlaces = 4;
+            this.blueYNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blueYNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.blueYNumeric.Location = new System.Drawing.Point(169, 93);
+            this.blueYNumeric.Name = "blueYNumeric";
+            this.blueYNumeric.Size = new System.Drawing.Size(79, 20);
+            this.blueYNumeric.TabIndex = 15;
+            this.blueYNumeric.ValueChanged += new System.EventHandler(this.blueYNumeric_ValueChanged);
+            // 
+            // whiteYNumeric
+            // 
+            this.whiteYNumeric.DecimalPlaces = 4;
+            this.whiteYNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.whiteYNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.whiteYNumeric.Location = new System.Drawing.Point(169, 123);
+            this.whiteYNumeric.Name = "whiteYNumeric";
+            this.whiteYNumeric.Size = new System.Drawing.Size(79, 20);
+            this.whiteYNumeric.TabIndex = 16;
+            this.whiteYNumeric.ValueChanged += new System.EventHandler(this.whiteYNumeric_ValueChanged);
+            // 
+            // gammeNumeric
+            // 
+            this.gammeNumeric.DecimalPlaces = 4;
+            this.gammeNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gammeNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.gammeNumeric.Location = new System.Drawing.Point(86, 153);
+            this.gammeNumeric.Name = "gammeNumeric";
+            this.gammeNumeric.Size = new System.Drawing.Size(77, 20);
+            this.gammeNumeric.TabIndex = 17;
+            this.gammeNumeric.ValueChanged += new System.EventHandler(this.gammeNumeric_ValueChanged);
+            // 
+            // redXNumeric
+            // 
+            this.redXNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.redXNumeric.DecimalPlaces = 4;
+            this.redXNumeric.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.redXNumeric.Location = new System.Drawing.Point(86, 33);
+            this.redXNumeric.Name = "redXNumeric";
+            this.redXNumeric.Size = new System.Drawing.Size(77, 20);
+            this.redXNumeric.TabIndex = 10;
+            this.redXNumeric.ValueChanged += new System.EventHandler(this.redXNumeric_ValueChanged);
             // 
             // redLabel
             // 
@@ -538,41 +632,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Model";
             // 
-            // descriptionLabel3
+            // button1
             // 
-            this.descriptionLabel3.AutoSize = true;
-            this.descriptionLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionLabel3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.descriptionLabel3.Location = new System.Drawing.Point(654, 0);
-            this.descriptionLabel3.Name = "descriptionLabel3";
-            this.descriptionLabel3.Size = new System.Drawing.Size(321, 20);
-            this.descriptionLabel3.TabIndex = 3;
-            this.descriptionLabel3.Text = "Cr";
-            this.descriptionLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // descriptionLabel2
-            // 
-            this.descriptionLabel2.AutoSize = true;
-            this.descriptionLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionLabel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.descriptionLabel2.Location = new System.Drawing.Point(328, 0);
-            this.descriptionLabel2.Name = "descriptionLabel2";
-            this.descriptionLabel2.Size = new System.Drawing.Size(320, 20);
-            this.descriptionLabel2.TabIndex = 4;
-            this.descriptionLabel2.Text = "Cb";
-            this.descriptionLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // descriptionLabel1
-            // 
-            this.descriptionLabel1.AutoSize = true;
-            this.descriptionLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.descriptionLabel1.Location = new System.Drawing.Point(3, 0);
-            this.descriptionLabel1.Name = "descriptionLabel1";
-            this.descriptionLabel1.Size = new System.Drawing.Size(319, 20);
-            this.descriptionLabel1.TabIndex = 5;
-            this.descriptionLabel1.Text = "Y";
-            this.descriptionLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button1.Location = new System.Drawing.Point(169, 153);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -600,15 +668,15 @@
             this.labTopTableLayoutPanel.PerformLayout();
             this.labBotTableLayoutPanel.ResumeLayout(false);
             this.labBotTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redYNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenXNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueXNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteXNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenYNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueYNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteYNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gammeNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redXNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,18 +710,19 @@
         private System.Windows.Forms.Label yLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
-        private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.NumericUpDown redYNumeric;
+        private System.Windows.Forms.NumericUpDown redXNumeric;
+        private System.Windows.Forms.NumericUpDown greenXNumeric;
+        private System.Windows.Forms.NumericUpDown blueXNumeric;
+        private System.Windows.Forms.NumericUpDown whiteXNumeric;
+        private System.Windows.Forms.NumericUpDown greenYNumeric;
+        private System.Windows.Forms.NumericUpDown blueYNumeric;
+        private System.Windows.Forms.NumericUpDown whiteYNumeric;
+        private System.Windows.Forms.NumericUpDown gammeNumeric;
         private System.Windows.Forms.Label descriptionLabel3;
         private System.Windows.Forms.Label descriptionLabel2;
         private System.Windows.Forms.Label descriptionLabel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
