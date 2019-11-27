@@ -22,8 +22,8 @@ namespace GK_Projekt3
         private double redX = (double)0.6400;
         private double redY = (double)0.3300;
 
-        private double greenX = (double)0.2100;
-        private double greenY = (double)0.7100;
+        private double greenX = (double)0.3000;
+        private double greenY = (double)0.6000;
 
         private double blueX = (double)0.1500;
         private double blueY = (double)0.0600;
@@ -44,6 +44,7 @@ namespace GK_Projekt3
             {
                 openFileDialog.Filter = "Image Files(*.BMP; *.JPG; *.PNG; *.GIF)| *.BMP; *.JPG; *.PNG; *.GIF | All files(*.*) | *.*";
                 openFileDialog.RestoreDirectory = true;
+                openFileDialog.InitialDirectory = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName;
                 Image image = null;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -60,6 +61,8 @@ namespace GK_Projekt3
         private void Form1_Shown(object sender, EventArgs e)
         {
             modelComboBox.SelectedIndex = 0;
+            colorProfileComboBox.SelectedIndex = 0;
+            illuminantComboBox.SelectedIndex = 0;
             redXNumeric.Value = (decimal)redX;
             redYNumeric.Value = (decimal)redY;
             greenXNumeric.Value = (decimal)greenX;
@@ -70,16 +73,6 @@ namespace GK_Projekt3
             whiteYNumeric.Value = (decimal)whiteY;
             gammeNumeric.Value = (decimal)gamma;
             UpdatePictures();
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void UpdatePictures()
@@ -184,19 +177,10 @@ namespace GK_Projekt3
             }
             else //Lab
             {
-                double maxL = 0;
-                double minL = 0;
-                double maxA = 0;
-                double minA = 0;
-                double maxB = 0;
-                double minB = 0;
                 double redZ = 1 - redX - redY;
                 double blueZ = 1 - blueX - blueY;
                 double greenZ = 1 - greenX - greenY;
                 double whiteZ = 1.0 - whiteX - whiteY;
-                //whiteX /= whiteY;
-                //whiteY /= whiteY;
-                //whiteZ /= whiteY;
                 Vector<double> whiteVector = Vector<double>.Build.DenseOfArray(new double[] { whiteX, whiteY, whiteZ });
                 Matrix<double> matrix = Matrix<double>.Build.DenseOfArray(new double[,] { { redX, greenX, blueX }, { redY, greenY, blueY }, { redZ, greenZ, blueZ } });
                 Matrix<double> inversedMatrix = matrix.Inverse();
@@ -225,7 +209,7 @@ namespace GK_Projekt3
                         double X = XYZ[0];
                         double Y = XYZ[1];
                         double Z = XYZ[2];
-                        double YYR = Y / YR; //Y / Yr
+                        double YYR = Y / YR; 
                         double cubicRootYYR = (double)Math.Pow(YYR, 1.0 / 3.0);
                         double L = 0, a = 0, b = 0;
                         if(YYR > 0.008856)
@@ -238,31 +222,6 @@ namespace GK_Projekt3
                         }
                         a = (double)500 * (double)((double)Math.Pow(X / XR, 1.0 / 3.0) - cubicRootYYR);
                         b = (double)200 * (double)(cubicRootYYR - (double)(Math.Pow(Z / ZR, 1.0 / 3.0)));
-                        if(i == 0 && j == 0)
-                        {
-                            maxL = L;
-                            minL = L;
-                            maxA = a;
-                            maxB = b;
-                            minA = a;
-                            minB = b;
-                        }
-                        else
-                        {
-                            if (maxL < L)
-                                maxL = L;
-                            if (minL > L)
-                                minL = L;
-                            if (maxA < a)
-                                maxA = a;
-                            if (minA > a)
-                                minA = a;
-                            if (maxB < b)
-                                maxB = b;
-                            if (minB > b)
-                                minB = b;
-                        }
-                        //?
                         L *= 85;
                         a *= 8;
                         b *= 8;
@@ -288,10 +247,6 @@ namespace GK_Projekt3
                         bitmap3.SetPixel(i, j, Color.FromArgb(b1, 127, 255 - b1));
                     }
                 }
-                descriptionLabel1.Text = $"minL = {minL.ToString("0.##")} maxL = {maxL.ToString("0.##")}";
-                descriptionLabel2.Text = $"minA = {minA.ToString("0.##")} maxA = {maxA.ToString("0.##")}";
-                descriptionLabel3.Text = $"minB = {minB.ToString("0.##")} maxB = {maxB.ToString("0.##")}";
-
             }
             pictureBox1.Image = bitmap1;
             pictureBox2.Image = bitmap2;
@@ -374,14 +329,80 @@ namespace GK_Projekt3
             gamma = (double)gammeNumeric.Value;
         }
 
-        private void labTableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             UpdatePictures();
+        }
+
+        private void colorProfileComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (colorProfileComboBox.SelectedIndex)
+            {
+                case 0://sRGB
+                    UpdateLabSettings(0.64, 0.33, 0.3, 0.6, 0.15, 0.06, 0.3127, 0.3290, 2.2);
+                    break;
+                case 1://Adobe
+                    UpdateLabSettings(0.64, 0.33, 0.21, 0.71, 0.15, 0.06, 0.3127, 0.329, 2.2);
+                    break;
+                case 2://Apple
+                    UpdateLabSettings(0.6250, 0.3400, 0.2800, 0.595, 0.155, 0.07, 0.3127, 0.329, 1.8);
+                    break;
+                case 3://CIE
+                    UpdateLabSettings(0.735, 0.265, 0.274, 0.717, 0.167, 0.009, 0.3333, 0.3333, 2.2);
+                    break;
+                case 4://Wide
+                    UpdateLabSettings(0.7347, 0.2653, 0.1152, 0.8264, 0.1566, 0.0177, 0.3457, 0.3585, 1.2);
+                    break;
+
+            }
+        }
+
+        private void UpdateLabSettings(double redX, double redY, double greenX, double greenY, double blueX, double blueY, double whiteX, double whiteY, double gamma)
+        {
+            redXNumeric.Value = (decimal)redX;
+            redYNumeric.Value = (decimal)redY;
+            greenXNumeric.Value = (decimal)greenX;
+            greenYNumeric.Value = (decimal)greenY;
+            blueXNumeric.Value = (decimal)blueX;
+            blueYNumeric.Value = (decimal)blueY;
+            whiteXNumeric.Value = (decimal)whiteX;
+            whiteYNumeric.Value = (decimal)whiteY;
+            gammeNumeric.Value = (decimal)gamma;
+        }
+
+        private void illuminantComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (illuminantComboBox.SelectedIndex)
+            {
+                case 0://A
+                    whiteXNumeric.Value = (decimal)0.44757;
+                    whiteYNumeric.Value = (decimal)0.40744;
+                    break;
+                case 1://B
+                    whiteXNumeric.Value = (decimal)0.34840;
+                    whiteYNumeric.Value = (decimal)0.35160;
+                    break;
+                case 2://C
+                    whiteXNumeric.Value = (decimal)0.31006;
+                    whiteYNumeric.Value = (decimal)0.31615;
+                    break;
+                case 3://D50
+                    whiteXNumeric.Value = (decimal)0.34567;
+                    whiteYNumeric.Value = (decimal)0.35850;
+                    break;
+                case 4://D75
+                    whiteXNumeric.Value = (decimal)0.29902;
+                    whiteYNumeric.Value = (decimal)0.31485;
+                    break;
+                case 5://E
+                    whiteXNumeric.Value = (decimal)0.33333;
+                    whiteYNumeric.Value = (decimal)0.33333;
+                    break;
+                case 6://F11
+                    whiteXNumeric.Value = (decimal)0.38054;
+                    whiteYNumeric.Value = (decimal)0.37691;
+                    break;
+            }
         }
     }
 }

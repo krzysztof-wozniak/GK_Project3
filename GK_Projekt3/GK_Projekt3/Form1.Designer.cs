@@ -44,8 +44,8 @@
             this.labGroupBox = new System.Windows.Forms.GroupBox();
             this.labTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.labTopTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.illuminantComboBox = new System.Windows.Forms.ComboBox();
+            this.colorProfileComboBox = new System.Windows.Forms.ComboBox();
             this.illuminantLabel = new System.Windows.Forms.Label();
             this.profileLabel = new System.Windows.Forms.Label();
             this.labBotTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -66,9 +66,8 @@
             this.gammeNumeric = new System.Windows.Forms.NumericUpDown();
             this.redXNumeric = new System.Windows.Forms.NumericUpDown();
             this.redLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.mainTableLayoutPanel.SuspendLayout();
             this.bottomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -231,16 +230,15 @@
             this.optionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.optionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.optionsTableLayoutPanel.Controls.Add(this.modelComboBox, 1, 0);
-            this.optionsTableLayoutPanel.Controls.Add(this.labGroupBox, 0, 2);
-            this.optionsTableLayoutPanel.Controls.Add(this.label2, 0, 1);
+            this.optionsTableLayoutPanel.Controls.Add(this.labGroupBox, 0, 1);
             this.optionsTableLayoutPanel.Controls.Add(this.label1, 0, 0);
             this.optionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.optionsTableLayoutPanel.Location = new System.Drawing.Point(706, 3);
             this.optionsTableLayoutPanel.Name = "optionsTableLayoutPanel";
-            this.optionsTableLayoutPanel.RowCount = 3;
-            this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.optionsTableLayoutPanel.RowCount = 2;
             this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.optionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.optionsTableLayoutPanel.Size = new System.Drawing.Size(269, 444);
             this.optionsTableLayoutPanel.TabIndex = 1;
             // 
@@ -254,7 +252,7 @@
             "Lab"});
             this.modelComboBox.Location = new System.Drawing.Point(137, 3);
             this.modelComboBox.Name = "modelComboBox";
-            this.modelComboBox.Size = new System.Drawing.Size(76, 21);
+            this.modelComboBox.Size = new System.Drawing.Size(120, 21);
             this.modelComboBox.TabIndex = 1;
             this.modelComboBox.SelectedIndexChanged += new System.EventHandler(this.modelComboBox_SelectedIndexChanged);
             // 
@@ -262,9 +260,9 @@
             // 
             this.optionsTableLayoutPanel.SetColumnSpan(this.labGroupBox, 2);
             this.labGroupBox.Controls.Add(this.labTableLayoutPanel);
-            this.labGroupBox.Location = new System.Drawing.Point(3, 63);
+            this.labGroupBox.Location = new System.Drawing.Point(3, 33);
             this.labGroupBox.Name = "labGroupBox";
-            this.labGroupBox.Size = new System.Drawing.Size(263, 318);
+            this.labGroupBox.Size = new System.Drawing.Size(263, 275);
             this.labGroupBox.TabIndex = 2;
             this.labGroupBox.TabStop = false;
             this.labGroupBox.Text = "Lab Settings";
@@ -281,17 +279,16 @@
             this.labTableLayoutPanel.RowCount = 2;
             this.labTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.labTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.labTableLayoutPanel.Size = new System.Drawing.Size(257, 299);
+            this.labTableLayoutPanel.Size = new System.Drawing.Size(257, 256);
             this.labTableLayoutPanel.TabIndex = 0;
-            this.labTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.labTableLayoutPanel_Paint);
             // 
             // labTopTableLayoutPanel
             // 
             this.labTopTableLayoutPanel.ColumnCount = 2;
             this.labTopTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.labTopTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.labTopTableLayoutPanel.Controls.Add(this.comboBox3, 1, 1);
-            this.labTopTableLayoutPanel.Controls.Add(this.comboBox2, 1, 0);
+            this.labTopTableLayoutPanel.Controls.Add(this.illuminantComboBox, 1, 1);
+            this.labTopTableLayoutPanel.Controls.Add(this.colorProfileComboBox, 1, 0);
             this.labTopTableLayoutPanel.Controls.Add(this.illuminantLabel, 0, 1);
             this.labTopTableLayoutPanel.Controls.Add(this.profileLabel, 0, 0);
             this.labTopTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
@@ -302,31 +299,41 @@
             this.labTopTableLayoutPanel.Size = new System.Drawing.Size(251, 64);
             this.labTopTableLayoutPanel.TabIndex = 0;
             // 
-            // comboBox3
+            // illuminantComboBox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "YCbCr",
-            "HSV",
-            "Lab"});
-            this.comboBox3.Location = new System.Drawing.Point(128, 33);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(76, 21);
-            this.comboBox3.TabIndex = 3;
+            this.illuminantComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.illuminantComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.illuminantComboBox.FormattingEnabled = true;
+            this.illuminantComboBox.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D50",
+            "D75",
+            "E",
+            "F11"});
+            this.illuminantComboBox.Location = new System.Drawing.Point(128, 33);
+            this.illuminantComboBox.Name = "illuminantComboBox";
+            this.illuminantComboBox.Size = new System.Drawing.Size(120, 21);
+            this.illuminantComboBox.TabIndex = 3;
+            this.illuminantComboBox.SelectedIndexChanged += new System.EventHandler(this.illuminantComboBox_SelectedIndexChanged);
             // 
-            // comboBox2
+            // colorProfileComboBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "YCbCr",
-            "HSV",
-            "Lab"});
-            this.comboBox2.Location = new System.Drawing.Point(128, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(76, 21);
-            this.comboBox2.TabIndex = 2;
+            this.colorProfileComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.colorProfileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.colorProfileComboBox.FormattingEnabled = true;
+            this.colorProfileComboBox.Items.AddRange(new object[] {
+            "sRGB",
+            "Adobe RGB",
+            "Apple RGB",
+            "CIE RGB",
+            "Wide Gamut"});
+            this.colorProfileComboBox.Location = new System.Drawing.Point(128, 3);
+            this.colorProfileComboBox.Name = "colorProfileComboBox";
+            this.colorProfileComboBox.Size = new System.Drawing.Size(120, 21);
+            this.colorProfileComboBox.TabIndex = 2;
+            this.colorProfileComboBox.SelectedIndexChanged += new System.EventHandler(this.colorProfileComboBox_SelectedIndexChanged);
             // 
             // illuminantLabel
             // 
@@ -369,7 +376,7 @@
             this.labBotTableLayoutPanel.Controls.Add(this.gammeNumeric, 1, 5);
             this.labBotTableLayoutPanel.Controls.Add(this.redXNumeric, 1, 1);
             this.labBotTableLayoutPanel.Controls.Add(this.redLabel, 0, 1);
-            this.labBotTableLayoutPanel.Controls.Add(this.button1, 2, 5);
+            this.labBotTableLayoutPanel.Controls.Add(this.updateButton, 2, 5);
             this.labBotTableLayoutPanel.Location = new System.Drawing.Point(3, 73);
             this.labBotTableLayoutPanel.Name = "labBotTableLayoutPanel";
             this.labBotTableLayoutPanel.RowCount = 6;
@@ -467,7 +474,7 @@
             // 
             // redYNumeric
             // 
-            this.redYNumeric.DecimalPlaces = 4;
+            this.redYNumeric.DecimalPlaces = 5;
             this.redYNumeric.Increment = new decimal(new int[] {
             1,
             0,
@@ -481,7 +488,7 @@
             // 
             // greenXNumeric
             // 
-            this.greenXNumeric.DecimalPlaces = 4;
+            this.greenXNumeric.DecimalPlaces = 5;
             this.greenXNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.greenXNumeric.Increment = new decimal(new int[] {
             1,
@@ -496,7 +503,7 @@
             // 
             // blueXNumeric
             // 
-            this.blueXNumeric.DecimalPlaces = 4;
+            this.blueXNumeric.DecimalPlaces = 5;
             this.blueXNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.blueXNumeric.Increment = new decimal(new int[] {
             1,
@@ -511,7 +518,7 @@
             // 
             // whiteXNumeric
             // 
-            this.whiteXNumeric.DecimalPlaces = 4;
+            this.whiteXNumeric.DecimalPlaces = 5;
             this.whiteXNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.whiteXNumeric.Increment = new decimal(new int[] {
             1,
@@ -526,7 +533,7 @@
             // 
             // greenYNumeric
             // 
-            this.greenYNumeric.DecimalPlaces = 4;
+            this.greenYNumeric.DecimalPlaces = 5;
             this.greenYNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.greenYNumeric.Increment = new decimal(new int[] {
             1,
@@ -541,7 +548,7 @@
             // 
             // blueYNumeric
             // 
-            this.blueYNumeric.DecimalPlaces = 4;
+            this.blueYNumeric.DecimalPlaces = 5;
             this.blueYNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.blueYNumeric.Increment = new decimal(new int[] {
             1,
@@ -556,7 +563,7 @@
             // 
             // whiteYNumeric
             // 
-            this.whiteYNumeric.DecimalPlaces = 4;
+            this.whiteYNumeric.DecimalPlaces = 5;
             this.whiteYNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.whiteYNumeric.Increment = new decimal(new int[] {
             1,
@@ -571,7 +578,7 @@
             // 
             // gammeNumeric
             // 
-            this.gammeNumeric.DecimalPlaces = 4;
+            this.gammeNumeric.DecimalPlaces = 5;
             this.gammeNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gammeNumeric.Increment = new decimal(new int[] {
             1,
@@ -589,7 +596,7 @@
             this.redXNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.redXNumeric.DecimalPlaces = 4;
+            this.redXNumeric.DecimalPlaces = 5;
             this.redXNumeric.Increment = new decimal(new int[] {
             1,
             0,
@@ -614,33 +621,31 @@
             this.redLabel.Text = "Red Primary";
             this.redLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // updateButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.updateButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updateButton.Location = new System.Drawing.Point(166, 150);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(82, 27);
+            this.updateButton.TabIndex = 18;
+            this.updateButton.Text = "Separate";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 7);
+            this.label1.Size = new System.Drawing.Size(128, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "Model";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(169, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -650,7 +655,7 @@
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.mainTableLayoutPanel);
             this.Name = "Form1";
-            this.Text = "Separcja RGB - Krzysztof Woźniak";
+            this.Text = "Separacja RGB - Krzysztof Woźniak";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.mainTableLayoutPanel.ResumeLayout(false);
             this.bottomTableLayoutPanel.ResumeLayout(false);
@@ -695,8 +700,8 @@
         private System.Windows.Forms.GroupBox labGroupBox;
         private System.Windows.Forms.TableLayoutPanel labTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel labTopTableLayoutPanel;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox illuminantComboBox;
+        private System.Windows.Forms.ComboBox colorProfileComboBox;
         private System.Windows.Forms.Label profileLabel;
         private System.Windows.Forms.Label illuminantLabel;
         private System.Windows.Forms.TableLayoutPanel labBotTableLayoutPanel;
@@ -709,7 +714,6 @@
         private System.Windows.Forms.Label xLabel;
         private System.Windows.Forms.Label yLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown redYNumeric;
         private System.Windows.Forms.NumericUpDown redXNumeric;
         private System.Windows.Forms.NumericUpDown greenXNumeric;
@@ -722,7 +726,7 @@
         private System.Windows.Forms.Label descriptionLabel3;
         private System.Windows.Forms.Label descriptionLabel2;
         private System.Windows.Forms.Label descriptionLabel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 
